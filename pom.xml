@@ -19,6 +19,8 @@
 	</properties>
 
 	<dependencies>
+
+		<!--BASIC FUNCTIONALITY-->
 		<!--Webapp-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -41,6 +43,19 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<!--SECURITY ADDON-->
+		<!--Spring Security (Loginpage)-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<!--JSON Web Token -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
 		</dependency>
 
 		<dependency>

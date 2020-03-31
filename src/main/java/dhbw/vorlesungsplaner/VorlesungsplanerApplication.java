@@ -16,7 +16,7 @@ public class VorlesungsplanerApplication {
 }
 
 @RestController
-class HelloController {
+class DefaultController {
 
 	@GetMapping("/")
 		String hello(){
