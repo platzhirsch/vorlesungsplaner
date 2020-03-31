@@ -20,7 +20,7 @@
 
 	<dependencies>
 
-		<!--BASIC FUNCTIONALITY-->
+		<!-- ################ BASIC FUNCTIONALITY ################ -->
 		<!--Webapp-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -45,7 +45,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 
-		<!--SECURITY ADDON-->
+		<!-- ################ SECURITY ADDON ################-->
 		<!--Spring Security (Loginpage)-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -56,6 +56,20 @@
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
 			<version>0.9.1</version>
+		</dependency>
+
+		<!-- ################ Testing ################-->
+
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.3.2</version>
 		</dependency>
 
 		<dependency>
