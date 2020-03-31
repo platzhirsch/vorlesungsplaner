@@ -19,7 +19,5 @@ public class VorlesungsplanerApplication {
 class DefaultController {
 
 	@GetMapping("/")
-		String hello(){
-		return "Hello";
-		}
+	String hello(){ return "Hello user. This is wrong path. Try again."; }
 }
