@@ -23,6 +23,7 @@ public class Dozenten {
     private String dozVorname;
     private String dozNachname;
     private String dozMail;
-    private Integer dozTel;
-    private Integer dozMobil;
+    private String dozTel;
+    private String dozMobil;
+    private String password;
 }
