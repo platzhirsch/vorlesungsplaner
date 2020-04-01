@@ -27,4 +27,8 @@ public class TermineServiceClass {
     public void delete(Integer id){
         termineRepository.deleteById(id);
     }
+
+    public List<Termine> getBySemId(Integer id) {
+        return termineRepository.findBySemesterSemId(id);
+    }
 }

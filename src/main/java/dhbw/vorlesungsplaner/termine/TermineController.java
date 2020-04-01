@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -14,13 +15,13 @@ public class TermineController {
     @Autowired
     private TermineServiceClass termineServiceClass;
 
-    @CrossOrigin
+
     @GetMapping("/termine/0") //GetAll
     public List<Termine> list() {
         return termineServiceClass.listAll();
     }
 
-    @CrossOrigin
+
     @GetMapping("/termine/{id}") //GetByID
     public ResponseEntity<Termine> get(@PathVariable Integer id){
         try {
@@ -31,13 +32,17 @@ public class TermineController {
         }
     }
 
-    @CrossOrigin
+    @GetMapping("/termine/semid/{id}")
+    public List<Termine> getBySemId(@PathVariable Integer id) {
+        return termineServiceClass.getBySemId(id);
+    }
+
     @PostMapping("/termine")
     public void add(@RequestBody Termine termine) {
         termineServiceClass.save(termine);
     }
 
-    @CrossOrigin
+
     @PutMapping("/termine/{id}") //Put
     public ResponseEntity<?> update(@RequestBody Termine termine, @PathVariable Integer id) {
         try {
@@ -49,7 +54,7 @@ public class TermineController {
         }
     }
 
-    @CrossOrigin
+
     @DeleteMapping("/termine/{id}") //Delete
     public void delete(@PathVariable Integer id) {
         termineServiceClass.delete(id);

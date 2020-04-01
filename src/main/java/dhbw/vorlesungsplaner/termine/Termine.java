@@ -10,6 +10,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -34,6 +35,8 @@ public class Termine {
 
     @ManyToOne
     private Semester semester; //Foreign key -> Semester
-    }
+
+
+}
 
 
