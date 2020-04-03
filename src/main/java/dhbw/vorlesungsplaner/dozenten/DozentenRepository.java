@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DozentenRepository extends JpaRepository<Dozenten, Integer> {
+    Dozenten findAllByDozMail(String dozMail);
 }

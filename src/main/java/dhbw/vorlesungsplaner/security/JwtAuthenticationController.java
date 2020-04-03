@@ -1,5 +1,6 @@
 package dhbw.vorlesungsplaner.security;
 
+import dhbw.vorlesungsplaner.dozenten.DozentenServiceClass;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -35,6 +36,10 @@ public class JwtAuthenticationController {
         return ResponseEntity.ok(new JwtResponse(token));
     }
 
+    @RequestMapping(value = "/dozenten/register", method = RequestMethod.POST)
+    public ResponseEntity<?> save(@RequestBody DozentenServiceClass dozenten) throws Exception {
+        return ResponseEntity.ok(userDetailsService.save(dozenten));
+    }
 
     private void authenticate(String username, String password) throws Exception {
         try {

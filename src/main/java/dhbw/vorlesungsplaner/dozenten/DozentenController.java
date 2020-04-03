@@ -34,12 +34,6 @@ public class DozentenController {
     }
 
 
-    @PostMapping("/dozenten")
-    public void add(@RequestBody Dozenten dozenten) {
-        dozentenServiceClass.save(dozenten);
-    }
-
-
     @PutMapping("/dozenten/{id}") //Put
     public ResponseEntity<?> update(@RequestBody Dozenten dozenten, @PathVariable Integer id) {
         try {
