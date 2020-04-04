@@ -76,4 +76,12 @@ public class Dozenten {
     public void setDozMobil(String dozMobil) {
         this.dozMobil = dozMobil;
     }
+
+    public Integer getDozId() {
+        return dozId;
+    }
+
+    public void setDozId(Integer dozId) {
+        this.dozId = dozId;
+    }
 }

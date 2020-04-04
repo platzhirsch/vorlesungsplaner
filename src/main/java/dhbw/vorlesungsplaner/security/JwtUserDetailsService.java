@@ -23,7 +23,9 @@ public class JwtUserDetailsService implements UserDetailsService {
     @Autowired
     private PasswordEncoder bcryptEncoder;
 
-    //return new User("Jany", "$2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6",
+    @Autowired
+    private DozentenServiceClass dozentenServiceClass;
+
 
     @Override
     public UserDetails loadUserByUsername(String dozMail) throws UsernameNotFoundException {
@@ -39,6 +41,17 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     public Dozenten save(DozentenServiceClass dozenten) {
         Dozenten newUser = new Dozenten();
+        newUser.setDozVorname(dozenten.getDozVorname());
+        newUser.setDozNachname(dozenten.getDozNachname());
+        newUser.setDozMail(dozenten.getDozMail());
+        newUser.setDozTel(dozenten.getDozTel());
+        newUser.setDozMobil(dozenten.getDozMobil());
+        newUser.setPassword(bcryptEncoder.encode(dozenten.getPassword()));
+        return dozentenRepository.save(newUser);
+    }
+    public Dozenten update(DozentenServiceClass dozenten, Integer id) {
+        Dozenten newUser = new Dozenten();
+        newUser.setDozId(id);
         newUser.setDozVorname(dozenten.getDozVorname());
         newUser.setDozNachname(dozenten.getDozNachname());
         newUser.setDozMail(dozenten.getDozMail());

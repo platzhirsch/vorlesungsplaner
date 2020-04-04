@@ -1,9 +1,11 @@
 package dhbw.vorlesungsplaner.dozenten;
 
 
+import dhbw.vorlesungsplaner.security.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +17,8 @@ public class DozentenController {
 
     @Autowired
     private DozentenServiceClass dozentenServiceClass;
+
+
 
 
     @GetMapping("/dozenten/0") //GetAll
@@ -33,17 +37,6 @@ public class DozentenController {
         }
     }
 
-
-    @PutMapping("/dozenten/{id}") //Put
-    public ResponseEntity<?> update(@RequestBody Dozenten dozenten, @PathVariable Integer id) {
-        try {
-            Dozenten existDozenten = dozentenServiceClass.get(id);
-            dozentenServiceClass.save(dozenten);
-            return new ResponseEntity<>(HttpStatus.OK);
-        } catch (NoSuchElementException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
 
     @DeleteMapping("/dozenten/{id}") //Delete
     public void delete(@PathVariable Integer id) {
