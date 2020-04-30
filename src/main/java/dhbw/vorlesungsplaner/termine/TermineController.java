@@ -37,6 +37,12 @@ public class TermineController {
         return termineServiceClass.getBySemId(id);
     }
 
+    @GetMapping("/termine/dozenten/{id}")
+    public List<Termine> getByDozId(@PathVariable Integer id) {
+        return termineServiceClass.getByDozId(id);
+    }
+
+
     @PostMapping("/termine")
     public void add(@RequestBody Termine termine) {
         termineServiceClass.save(termine);
