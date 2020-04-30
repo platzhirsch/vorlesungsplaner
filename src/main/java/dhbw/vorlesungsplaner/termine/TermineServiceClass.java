@@ -31,4 +31,9 @@ public class TermineServiceClass {
     public List<Termine> getBySemId(Integer id) {
         return termineRepository.findBySemesterSemId(id);
     }
+
+    public List<Termine> getByDozId(Integer id) {
+        return termineRepository.findByVorlesungen_Dozenten_DozId(id);
+    }
+
 }

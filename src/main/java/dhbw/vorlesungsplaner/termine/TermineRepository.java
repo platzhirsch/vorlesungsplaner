@@ -11,4 +11,5 @@ public interface TermineRepository extends JpaRepository<Termine, Integer> {
 
     public List<Termine> findBySemesterSemId(Integer id);
 
+    public List<Termine> findByVorlesungen_Dozenten_DozId(Integer id);
 }
