@@ -22,7 +22,7 @@ public class VorlesungsplanerApplication {
 		FilterRegistrationBean registrationBean =
 				new FilterRegistrationBean(new CORSFilter());
 		registrationBean.setName("CORS Filter");
-		registrationBean.addUrlPatterns("/*");
+		registrationBean.addUrlPatterns("/**");
 		registrationBean.setOrder(1);
 		return registrationBean;
 	}
