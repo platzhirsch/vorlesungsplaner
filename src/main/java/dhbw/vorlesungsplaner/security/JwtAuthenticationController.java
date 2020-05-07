@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.NoSuchElementException;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "https://dhbw-organizer.herokuapp.com")
 public class JwtAuthenticationController {
 
     @Autowired

@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "https://dhbw-organizer.herokuapp.com")
 public class TermineController {
     @Autowired
     private TermineServiceClass termineServiceClass;

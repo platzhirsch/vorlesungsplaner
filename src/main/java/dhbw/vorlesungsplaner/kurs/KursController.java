@@ -9,17 +9,17 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
+@CrossOrigin(origins = "https://dhbw-organizer.herokuapp.com")
 public class KursController {
     @Autowired
     private KursServiceClass kursServiceClass;
 
-    @CrossOrigin
     @GetMapping("/kurs/0") //GetAll
     public List<Kurs> list() {
         return kursServiceClass.listAll();
     }
 
-    @CrossOrigin
+
     @GetMapping("/kurs/{id}") //GetByID
     public ResponseEntity<Kurs> get(@PathVariable Integer id){
         try {
@@ -30,13 +30,11 @@ public class KursController {
         }
     }
 
-    @CrossOrigin
     @PostMapping("/kurs")
     public void add(@RequestBody Kurs kurs) {
         kursServiceClass.save(kurs);
     }
 
-    @CrossOrigin
     @PutMapping("/kurs/{id}") //Put
     public ResponseEntity<?> update(@RequestBody Kurs kurs, @PathVariable Integer id) {
         try {
@@ -48,7 +46,6 @@ public class KursController {
         }
     }
 
-    @CrossOrigin
     @DeleteMapping("/kurs/{id}") //Delete
     public void delete(@PathVariable Integer id) {
         kursServiceClass.delete(id);

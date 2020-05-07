@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-@CrossOrigin
 @RestController
+@CrossOrigin(origins = "https://dhbw-organizer.herokuapp.com")
 public class SemesterController {
 
     @Autowired
