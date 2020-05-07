@@ -6,14 +6,6 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * CORS Filter
- *
- * This filter is an implementation of W3C's CORS
- * (Cross-Origin Resource Sharing) specification,
- * which is a mechanism that enables cross-origin requests.
- *
- */
 public class CORSFilter extends GenericFilterBean implements Filter {
 
     @Override
@@ -38,4 +30,4 @@ public class CORSFilter extends GenericFilterBean implements Filter {
     }
 
 
-} // The End...
+} 
