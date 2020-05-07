@@ -18,8 +18,16 @@ public class DozentenController {
     @Autowired
     private DozentenServiceClass dozentenServiceClass;
 
-
-
+    @PutMapping("/dozenten/{id}") //Put
+    public ResponseEntity<?> update(@RequestBody Dozenten dozenten, @PathVariable Integer id) {
+        try {
+            Dozenten existDozenten = dozentenServiceClass.get(id);
+            dozentenServiceClass.save(dozenten);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (NoSuchElementException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 
     @GetMapping("/dozenten/0") //GetAll
     public List<Dozenten> list() {
